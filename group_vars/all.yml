@@ -11,3 +11,8 @@ user_password         : mysecretpassword
 
 path_ssh_private_key  : /Users/ilsaf/.ssh/id_rsa
 path_ssh_public_key   : /Users/ilsaf/.ssh/id_rsa.pub
+
+db_root_password      : mysecretpassword
+db_user               : emobil
+db_name               : ansible_emobile
+db_password           : mysecretpassword
