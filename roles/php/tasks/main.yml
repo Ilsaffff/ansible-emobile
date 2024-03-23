@@ -1,3 +1,3 @@
 ---
 - name: Copy index.php
-  template: src=index.j2 dest=var/www/html/index.php
+  template: src=index.j2 dest={{ compose_folder }}/html/index.php
