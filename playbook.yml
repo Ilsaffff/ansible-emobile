@@ -1,0 +1,12 @@
+---
+- name: Deploy
+  hosts: production
+  become: yes
+
+  roles:
+    - server_setup
+    - nginx
+    - mysql
+    - php
+    - compose
+

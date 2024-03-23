@@ -1,0 +1,17 @@
+---
+- name: Create project dir
+  file:
+    path: "{{ compose_folder }}"
+    owner: {{ user_name }}
+    group: {{ user_name }}
+    mode: '0755'
+    state: directory
+
+- name: Create volumes dir
+  file:
+    path: "{{ volumes_folder }}"
+    owner: its
+    group: its
+    mode: '0755'
+    state: directory
+

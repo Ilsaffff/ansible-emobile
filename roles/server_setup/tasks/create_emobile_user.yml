@@ -1,0 +1,31 @@
+---
+- name: Create user
+  user:
+    name: {{ user }}
+    password: {{ user_password }}
+    groups: docker, sudo
+    state: present
+    shell: /bin/bash
+    createhome: yes
+
+- name: Create /home/{{ user }}/.ssh dir
+  file:
+    path: /home/{{ user }}/.ssh
+    owner: {{ user }}
+    group: {{ user }}
+    mode: '0700'
+    state: directory
+
+- name: Copy root ssh identity
+  file:
+    path: /home/{{ user }}/.ssh/authorized_keys
+    owner: {{ user }}
+    group: {{ user }}
+    mode: '0600'
+    state: touch
+
+- name: Set authorized key taken from file
+  ansible.posix.authorized_key:
+    user: {{ user }}
+    state: present
+    key: "{{ lookup('file', '{{ path_ssh_private_key }}') }}"

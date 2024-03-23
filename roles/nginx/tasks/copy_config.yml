@@ -1,0 +1,3 @@
+---
+- name: Copy .env file
+  template: src=nginx.j2 dest=/etc/nginx/conf.d/{{ deploy_name }}.conf

@@ -1,0 +1,29 @@
+version: '3'
+services:
+  nginx:
+    container_name: {{ deploy_name }}_nginx
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - php
+
+  php:
+    container_name: {{ deploy_name }}_php
+    image: php:latest
+    volumes:
+      - ./html:/var/www/html
+
+  mysql:
+    container_name: {{ deploy_name }}_mysql
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: {{ db_root_passowrd }}
+      MYSQL_DATABASE: {{ db_name }}
+      MYSQL_USER: {{ db_user }}
+      MYSQL_PASSWORD: {{ db_password }}
+    volumes:
+      - ./db:/var/lib/mysql

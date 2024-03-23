@@ -1,0 +1,7 @@
+---
+
+- name: Copy nginx config
+  import_tasks: copy_config.yml
+
+- name: Generate certbot certs
+  import_tasks: generate_certs.yml

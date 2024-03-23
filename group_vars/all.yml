@@ -1,0 +1,13 @@
+---
+ansible_user          : root
+deploy_name           : ansible-emobile
+compose_folder        : /home/{{ user }}/{{ deploy_name }}
+
+domain                : john-galt.ru
+cert_email            : ilsaf.corp@gmail.com
+
+user                  : emobile
+user_password         : mysecretpassword
+
+path_ssh_private_key  : /Users/ilsaf/.ssh/id_rsa
+path_ssh_public_key   : /Users/ilsaf/.ssh/id_rsa.pub
