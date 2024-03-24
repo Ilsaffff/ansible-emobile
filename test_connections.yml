@@ -1,0 +1,8 @@
+---
+- name: Deploy
+  hosts: production
+  become: yes
+
+  tasks:
+    - name: Ping servers
+      ping:

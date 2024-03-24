@@ -1,4 +1,0 @@
----
-- name: generate certs
-  shell:
-    cmd: "certbot --non-interactive --agree-tos -m {{ cert_email }} --nginx -d {{ domain }} -d {{ domain }}"

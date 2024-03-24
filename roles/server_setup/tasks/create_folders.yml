@@ -2,16 +2,31 @@
 - name: Create project dir
   file:
     path: "{{ compose_folder }}"
-    owner: {{ user_name }}
-    group: {{ user_name }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: '0755'
     state: directory
 
 - name: Create volumes dir
   file:
     path: "{{ volumes_folder }}"
-    owner: its
-    group: its
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: '0755'
     state: directory
 
+- name: Create nginx dir
+  file:
+    path: "{{ compose_folder }}"/nginx
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0755'
+    state: directory
+
+- name: Create php dir
+  file:
+    path: "{{ compose_folder }}"/html
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0755'
+    state: directory

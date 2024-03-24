@@ -1,5 +1,5 @@
 ---
 - name: Up docker-compose cluster
   shell:
-    cmd: "docker-compose up -d"
+    cmd: "docker compose up -d"
     chdir: "{{ compose_folder }}"

@@ -6,7 +6,6 @@
   roles:
     - server_setup
     - nginx
-    - mysql
     - php
     - compose
 

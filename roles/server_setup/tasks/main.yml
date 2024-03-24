@@ -1,10 +1,10 @@
 ---
 
-- name: Update servers
-  import_tasks: update_servers.yml
-
-- name: Install dependencies
-  import_tasks: install_dependencies.yml
+#- name: Update servers
+#  import_tasks: update_servers.yml
+#
+#- name: Install dependencies
+#  import_tasks: install_dependencies.yml
 
 - name: Create emobile user
   import_tasks: create_emobile_user.yml

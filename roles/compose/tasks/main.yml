@@ -1,0 +1,7 @@
+---
+
+- name: Copy files
+  import_tasks: copy_files.yml
+
+- name: Up cluster
+  import_tasks: up_cluster.yml

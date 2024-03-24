@@ -2,6 +2,7 @@
 ansible_user          : root
 deploy_name           : ansible-emobile
 compose_folder        : /home/{{ user }}/{{ deploy_name }}
+volumes_folder        : /home/{{ user }}/volumes
 
 domain                : john-galt.ru
 cert_email            : ilsaf.corp@gmail.com
